@@ -1,2 +1,0 @@
-# essflix
-Netflix clone
