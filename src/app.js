@@ -3,6 +3,7 @@ import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { Home, Browse, Signin, Signup } from "./pages"
 import * as ROUTES from './constants/routes';
+//import { firebase } from "./lib/firebase.prod"
 
 export default function App() {
   return (
