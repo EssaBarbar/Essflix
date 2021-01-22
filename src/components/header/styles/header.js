@@ -4,17 +4,20 @@ import { Link as ReachRouterLink } from 'react-router-dom';
 export const Background = styled.div`
   display: flex;
   flex-direction: column;
-  background: url(${({ src }) => (src ? `../images/misc/${src}.jpg` : '../images/misc/home-bg.jpg')}) top left / cover
-    no-repeat;
+  background: url(${({ src }) =>
+      src ? `../images/misc/${src}.jpg` : '../images/misc/home-bg.jpg'})
+    top left / cover no-repeat;
 
   @media (max-width: 1100px) {
-    ${({ dontShowOnSmallViewPort }) => dontShowOnSmallViewPort && `background: none;`}
+    ${({ dontShowOnSmallViewPort }) =>
+      dontShowOnSmallViewPort && `background: none;`}
   }
 `;
 
 export const Container = styled.div`
   display: flex;
-  margin: 0 56px;
+  margin-right: 56px;
+  margin-left: 20px;
   height: 64px;
   padding: 18px 0;
   justify-content: space-between;
@@ -25,16 +28,21 @@ export const Container = styled.div`
   }
 
   @media (max-width: 1000px) {
-    margin: 0 30px;
+    margin-right: 30px;
   }
 `;
 
 export const Link = styled.p`
-  color: #fff;
   text-decoration: none;
   margin-right: 30px;
-  font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
+  margin-left: 30px;
+  font-weight: ${({ active }) => (active === 'true' ? '900' : 'normal')};
+  color: ${({ active }) => (active === 'true' ? '#fffd80' : 'white')};
   cursor: pointer;
+  font-size: 22px;
+  text-shadow: 0 0 0.2em #f87, 0 0 0.2em #f87, 0.07em 0 black, 0 0.07em black,
+    -0.07em 0 black, 0 -0.07em black;
+  overflow: hidden;
 
   &:hover {
     font-weight: bold;
@@ -198,8 +206,7 @@ export const Text = styled.p`
 export const Logo = styled.img`
   height: 150px;
   width: 150px;
-  backgroundColor: red;
-  margin-right: 40px;
+  transition: width 1s, height 1s ease-in-out;
 
   @media (min-width: 1000px) {
     height: 200px;
