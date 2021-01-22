@@ -1,5 +1,5 @@
-import React from 'react';
-import { Footer } from '../components';
+import React from "react";
+import { Footer } from "../components";
 
 export function FooterContainer() {
   return (
@@ -12,7 +12,7 @@ export function FooterContainer() {
           <Footer.Link href="#s">Investor Relations</Footer.Link>
           <Footer.Link href="#">Ways to Watch</Footer.Link>
           <Footer.Link href="#">Corporate Information</Footer.Link>
-          <Footer.Link href="#">Netflix Originals</Footer.Link>
+          <Footer.Link href="#">Essflix Originals</Footer.Link>
         </Footer.Column>
 
         <Footer.Column>
