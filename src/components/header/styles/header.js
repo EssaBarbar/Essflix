@@ -39,8 +39,9 @@ export const Link = styled.p`
   font-weight: ${({ active }) => (active === "true" ? "900" : "normal")};
   color: ${({ active }) => (active === "true" ? "#fffd80" : "white")};
   cursor: pointer;
-  font-size: 26px;
-  text-shadow: 0 0 0.2em #f87, 0 0 0.2em #f87, 0.07em 0 black, 0 0.07em black,
+  color: ${({ scrolled }) => (scrolled === "true" ? "#fffd80" : "white")};
+  font-size: 20px;
+  text-shadow: 0 0 0.2em, 0 0 0.2em, 0.07em 0 black, 0 0.07em black,
     -0.07em 0 black, 0 -0.07em black;
   overflow: hidden;
 
@@ -52,9 +53,9 @@ export const Link = styled.p`
     margin-right: 0;
   }
   @media (max-width: 800px) {
-    margin-right: 15px;
-    margin-left: 10px;
-    font-size: 15px;
+    margin-right: 10px;
+    margin-left: 5px;
+    font-size: 13px;
   }
 `;
 

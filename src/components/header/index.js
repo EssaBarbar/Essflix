@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link as ReachRouterLink } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link as ReachRouterLink } from "react-router-dom";
 import {
   Container,
   Group,
@@ -17,7 +17,7 @@ import {
   Text,
   Feature,
   Logo,
-} from './styles/header';
+} from "./styles/header";
 
 export default function Header({ bg = true, children, ...restProps }) {
   return bg ? (
