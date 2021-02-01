@@ -1,11 +1,11 @@
-import styled from "styled-components/macro";
-import { Link as ReachRouterLink } from "react-router-dom";
+import styled from 'styled-components/macro';
+import { Link as ReachRouterLink } from 'react-router-dom';
 
 export const Background = styled.div`
   display: flex;
   flex-direction: column;
   background: url(${({ src }) =>
-      src ? `../images/misc/${src}.jpg` : "../images/misc/home-bg.jpg"})
+      src ? `../images/misc/${src}.jpg` : '../images/misc/home-bg.jpg'})
     top left / cover no-repeat;
 
   @media (max-width: 1100px) {
@@ -36,8 +36,8 @@ export const Link = styled.p`
   text-decoration: none;
   margin-right: 30px;
   margin-left: 30px;
-  font-weight: ${({ active }) => (active === "true" ? "900" : "normal")};
-  color: ${({ active }) => (active === "true" ? "#fffd80" : "white")};
+  font-weight: ${({ active }) => (active === 'true' ? '900' : 'normal')};
+  color: ${({ active }) => (active === 'true' ? '#fffd80' : 'white')};
   cursor: pointer;
   font-size: 20px;
   text-shadow: 0 0 0.2em, 0 0 0.2em, 0.07em 0 black, 0 0.07em black,
@@ -70,10 +70,10 @@ export const SearchInput = styled.input`
   transition: width 0.5s;
   height: 30px;
   font-size: 14px;
-  margin-left: ${({ active }) => (active === true ? "10px" : "0")};
-  padding: ${({ active }) => (active === true ? "0 10px" : "0")};
-  opacity: ${({ active }) => (active === true ? "1" : "0")};
-  width: ${({ active }) => (active === true ? "200px" : "0px")};
+  margin-left: ${({ active }) => (active === true ? '10px' : '0')};
+  padding: ${({ active }) => (active === true ? '0 10px' : '0')};
+  opacity: ${({ active }) => (active === true ? '1' : '0')};
+  width: ${({ active }) => (active === true ? '200px' : '0px')};
 `;
 
 export const Search = styled.div`
