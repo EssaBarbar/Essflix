@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import ErrorPage from '../pages/404';
 
 export function IsUserRedirect({
   user,
@@ -11,19 +10,39 @@ export function IsUserRedirect({
 }) {
   return (
     <Route
-      path={path}
-      exact
       {...rest}
-      render={(path) => {
-        const theNewpath = path.location.pathname;
-        if (
-          theNewpath === '/' ||
-          theNewpath === '/signin' ||
-          theNewpath === '/signup'
-        ) {
+      render={() => {
+        if (path === '/404') {
           return children;
         }
-        return <ErrorPage />;
+        if (
+          path === '/signin' ||
+          path === '/signup' ||
+          path === '/browse' ||
+          path === '/home' ||
+          path === '/'
+        ) {
+          if (!user) {
+            return children;
+          }
+
+          if (user) {
+            return (
+              <Redirect
+                to={{
+                  pathname: loggedInPath,
+                }}
+              />
+            );
+          }
+        } else {
+          <Redirect
+            to={{
+              pathname: '/404',
+            }}
+          />;
+        }
+        return null;
       }}
     />
   );
