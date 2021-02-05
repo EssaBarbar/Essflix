@@ -12,7 +12,7 @@ export default function ErrorPage() {
   useEffect(() => {
     setTimeout(() => {
       history.push('/');
-    }, 10000);
+    }, 15000);
     $(document).mousemove((event) => {
       $('.torch').css({
         top: event.pageY,
@@ -32,19 +32,33 @@ export default function ErrorPage() {
       window.location.reload(false);
     };
   });
-  const white = {
+
+  const whiteh1 = {
     color: 'white',
+    fontSize: '100px',
+    marginLeft: '350px',
+  };
+  const whiteh2 = {
+    fontWeight: '900',
+    color: 'red',
+    fontSize: '32px',
+    marginLeft: '30px',
+  };
+  const whiteh3 = {
+    color: 'white',
+    fontSize: '35px',
+    marginLeft: '30px',
   };
   return (
     <>
-      <h1 style={white}>404</h1>
+      <h1 style={whiteh1}>404</h1>
       <div>
-        <h1 style={white}>
-          Yow will be redirected to the home page in 10 seconds{' '}
-        </h1>
-        <h2 style={white}>Uh, Ohh</h2>
-        <h3 style={white}>
+        <h2 style={whiteh2}>Uh, Ohh</h2>
+        <h2 style={whiteh2}>
           Sorry we cant find what you are looking for cuz its so dark in here
+        </h2>
+        <h3 style={whiteh3}>
+          Yow will be redirected to the home page in 15 seconds
         </h3>
       </div>
       <div className="torch"></div>
