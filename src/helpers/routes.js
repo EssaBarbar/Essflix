@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import ErrorPage from '../pages/404';
 
 export function IsUserRedirect({
   user,
@@ -8,7 +9,24 @@ export function IsUserRedirect({
   children,
   ...rest
 }) {
-  return <Route exact path={path} {...rest} render={() => children} />;
+  return (
+    <Route
+      path={path}
+      exact
+      {...rest}
+      render={(path) => {
+        const theNewpath = path.location.pathname;
+        if (
+          theNewpath === '/' ||
+          theNewpath === '/signin' ||
+          theNewpath === '/signup'
+        ) {
+          return children;
+        }
+        return <ErrorPage />;
+      }}
+    />
+  );
 }
 
 export function ProtectedRoute({ user, children, ...rest }) {

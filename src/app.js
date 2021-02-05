@@ -28,15 +28,8 @@ export function App() {
         <ProtectedRoute user={user} path={ROUTES.BROWSE}>
           <Browse />
         </ProtectedRoute>
-        <IsUserRedirect
-          user={user}
-          loggedInPath={ROUTES.BROWSE}
-          path={ROUTES.HOME}
-        >
+        <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path="/">
           <Home />
-        </IsUserRedirect>
-        <IsUserRedirect user={user} path={'/404'}>
-          <h1>hello from app</h1>
         </IsUserRedirect>
       </Switch>
     </Router>
